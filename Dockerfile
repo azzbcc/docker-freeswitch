@@ -27,3 +27,10 @@ RUN \
 
 # 安装常用模块
 ADD mod /usr/lib64/freeswitch/mod
+
+# 安装常用模块依赖
+RUN \
+    # 安装依赖
+    dnf install -y mariadb-connector-c opus libsndfile && \
+    # 清理缓存
+    dnf clean all
