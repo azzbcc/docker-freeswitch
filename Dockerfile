@@ -34,3 +34,6 @@ RUN \
     dnf install -y mariadb-connector-c opus libsndfile && \
     # 清理缓存
     dnf clean all
+
+# local_stream 文件
+ADD music /usr/share/freeswitch/sounds/music
