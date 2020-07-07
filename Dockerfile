@@ -41,4 +41,8 @@ ADD music /usr/share/freeswitch/sounds/music
 # 添加默认配置
 ADD etc /etc/freeswitch
 
+# 添加entrypoint.sh
+ADD docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
 CMD ["freeswitch"]
