@@ -25,3 +25,5 @@ RUN \
     # 清理缓存
     dnf clean all
 
+# 安装常用模块
+ADD mod /usr/lib64/freeswitch/mod
