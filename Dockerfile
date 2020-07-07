@@ -13,3 +13,7 @@ ARG hostgid=1000
 RUN \
     groupadd --gid $hostgid --force freeswitch && \
     useradd --gid $hostgid --uid $hostuid --no-create-home --no-log-init --shell /sbin/nologin freeswitch
+
+# 添加可执行文件以及核心库
+ADD bin /usr/bin
+ADD lib /usr/lib64
