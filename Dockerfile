@@ -17,3 +17,11 @@ RUN \
 # 添加可执行文件以及核心库
 ADD bin /usr/bin
 ADD lib /usr/lib64
+
+# 安装软件依赖
+RUN \
+    # 安装依赖
+    dnf install -y speex speexdsp libedit && \
+    # 清理缓存
+    dnf clean all
+
