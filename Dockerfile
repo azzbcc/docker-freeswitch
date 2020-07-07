@@ -37,3 +37,6 @@ RUN \
 
 # local_stream 文件
 ADD music /usr/share/freeswitch/sounds/music
+
+# 添加默认配置
+ADD etc /etc/freeswitch

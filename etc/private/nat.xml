@@ -1,0 +1,39 @@
+<include>
+	<X-PRE-PROCESS cmd="set" data="external_ip=x.x.x.x"/>
+	<!--
+      This setting is what sets the default domain FreeSWITCH will use if all else fails.
+
+      FreeSWICH will default to $${local_ip_v4} unless changed.  Changing this setting does
+      affect the sip authentication.  Please review conf/directory/default.xml for more
+      information on this topic.
+  -->
+	<X-PRE-PROCESS cmd="set" data="domain_name=$${domain}"/>
+	<!-- external_rtp_ip
+       Can be an one of:
+           ip address: "12.34.56.78"
+           a stun server lookup: "stun:stun.server.com"
+           a DNS name: "host:host.server.com"
+       where fs.mydomain.com is a DNS A record-useful when fs is on
+       a dynamic IP address, and uses a dynamic DNS updater.
+       If unspecified, the bind_server_ip value is used.
+       Used by: sofia.conf.xml dingaling.conf.xml
+  -->
+	<X-PRE-PROCESS cmd="set" data="external_rtp_ip=$${external_ip}"/>
+	<!-- external_sip_ip
+      Used as the public IP address for SDP.
+       Can be an one of:
+           ip address: "12.34.56.78"
+           a stun server lookup: "stun:stun.server.com"
+           a DNS name: "host:host.server.com"
+       where fs.mydomain.com is a DNS A record-useful when fs is on
+       a dynamic IP address, and uses a dynamic DNS updater.
+       If unspecified, the bind_server_ip value is used.
+       Used by: sofia.conf.xml dingaling.conf.xml
+  -->
+	<X-PRE-PROCESS cmd="set" data="external_sip_ip=$${external_ip}"/>
+	<X-PRE-PROCESS cmd="set" data="internal_sip_port=5060"/>
+	<X-PRE-PROCESS cmd="set" data="internal_tls_port=5061"/>
+	<X-PRE-PROCESS cmd="set" data="external_sip_port=5080"/>
+	<X-PRE-PROCESS cmd="set" data="external_tls_port=5081"/>
+	<X-PRE-PROCESS cmd="set" data="event_socket_port=8021"/>
+</include>
