@@ -5,3 +5,11 @@ LABEL maintainer="Clarence <xjh.azzbcc@gmail.com>"
 RUN \
     dnf update -y &&\
     dnf clean all
+
+ARG hostuid=1000
+ARG hostgid=1000
+
+# 创建用户
+RUN \
+    groupadd --gid $hostgid --force freeswitch && \
+    useradd --gid $hostgid --uid $hostuid --no-create-home --no-log-init --shell /sbin/nologin freeswitch
