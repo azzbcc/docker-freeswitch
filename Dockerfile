@@ -1,3 +1,10 @@
+FROM azzbcc/freeswitch-build:latest as builder
+
+# 安装音乐文件
+RUN \
+    mkdir -p /usr/share/freeswitch && \
+    make moh-install
+
 FROM centos:8
 LABEL maintainer="Clarence <xjh.azzbcc@gmail.com>"
 
@@ -15,8 +22,8 @@ RUN \
     useradd --gid $hostgid --uid $hostuid --no-create-home --no-log-init --shell /sbin/nologin freeswitch
 
 # 添加可执行文件以及核心库
-ADD bin /usr/bin
-ADD lib /usr/lib64
+COPY --from=builder /usr/bin/freeswitch /usr/bin/fs_* /usr/bin/tone2wav /usr/bin/
+COPY --from=builder /usr/lib64/libfreeswitch.so* /usr/lib64/
 
 # 安装软件依赖
 RUN \
@@ -26,7 +33,7 @@ RUN \
     dnf clean all
 
 # 安装常用模块
-ADD mod /usr/lib64/freeswitch/mod
+COPY --from=builder /usr/lib64/freeswitch/mod/mod*.so /usr/lib64/freeswitch/mod/
 
 # 安装常用模块依赖
 RUN \
@@ -36,7 +43,7 @@ RUN \
     dnf clean all
 
 # local_stream 文件
-ADD music /usr/share/freeswitch/sounds/music
+COPY --from=builder /usr/share/freeswitch /usr/share/freeswitch
 
 # 添加默认配置
 ADD etc /etc/freeswitch
