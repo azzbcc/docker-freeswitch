@@ -30,7 +30,7 @@ COPY --from=builder /usr/lib64/libspandsp.so* /usr/lib64/
 # 安装软件依赖
 RUN \
     # 安装依赖
-    dnf install -y speex speexdsp libedit && \
+    dnf install -y speex speexdsp libedit libtiff && \
     # 清理缓存
     dnf clean all
 
