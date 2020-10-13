@@ -24,6 +24,8 @@ RUN \
 # 添加可执行文件以及核心库
 COPY --from=builder /usr/bin/freeswitch /usr/bin/fs_* /usr/bin/tone2wav /usr/bin/
 COPY --from=builder /usr/lib64/libfreeswitch.so* /usr/lib64/
+COPY --from=builder /usr/lib64/libsofia-sip-ua.so* /usr/lib64/
+COPY --from=builder /usr/lib64/libspandsp.so* /usr/lib64/
 
 # 安装软件依赖
 RUN \
