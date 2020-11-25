@@ -1,0 +1,7 @@
+<include>
+    <!-- global odbc dsn -->
+    <X-PRE-PROCESS cmd="set" data="global_odbc_dsn=odbc://cc"/>
+    <X-PRE-PROCESS cmd="set" data="sofia_internal_odbc_dsn=odbc://cc_sofia_internal"/>
+    <X-PRE-PROCESS cmd="set" data="sofia_external_odbc_dsn=odbc://cc_sofia_external"/>
+    <X-PRE-PROCESS cmd="set" data="sofia_message_odbc_dsn=odbc://cc_sofia_message"/>
+</include>
