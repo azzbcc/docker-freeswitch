@@ -1,7 +1,5 @@
 <include>
     <!-- global odbc dsn -->
-    <X-PRE-PROCESS cmd="set" data="global_odbc_dsn=odbc://cc"/>
-    <X-PRE-PROCESS cmd="set" data="sofia_internal_odbc_dsn=odbc://cc_sofia_internal"/>
-    <X-PRE-PROCESS cmd="set" data="sofia_external_odbc_dsn=odbc://cc_sofia_external"/>
-    <X-PRE-PROCESS cmd="set" data="sofia_message_odbc_dsn=odbc://cc_sofia_message"/>
+    <X-PRE-PROCESS cmd="set" data="core_dsn=mysql://db=fs_core;option=65536;user=freeswitch;passwd=freeswitch;host=mysql_ip"/>
+    <X-PRE-PROCESS cmd="set" data="sofia_dsn=mysql://db=fs_sofia;option=65536;user=freeswitch;passwd=freeswitch;host=mysql_ip"/>
 </include>
