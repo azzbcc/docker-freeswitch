@@ -13,7 +13,8 @@
     -->
     </aliases>
     <!-- Outbound Registrations -->
-    <gateways></gateways>
+    <gateways>
+    </gateways>
     <domains>
         <!-- indicator to parse the directory for domains with parse="true" to get gateways-->
         <!--<domain name="$${domain}" parse="true"/>-->
@@ -67,7 +68,7 @@
         <param name="watchdog-event-timeout" value="30000"/>
         <param name="log-auth-failures" value="false"/>
         <param name="forward-unsolicited-mwi-notify" value="false"/>
-        <param name="context" value="public"/>
+        <param name="context" value="internal"/>
         <param name="rfc2833-pt" value="101"/>
         <!-- port to bind to for sip traffic -->
         <param name="sip-port" value="$${internal_sip_port}"/>
