@@ -1,5 +1,5 @@
 <include>
-	<!--
+    <!--
        Examples of codec options: (module must be compiled and loaded)
 
        codecname[@8000h|16000h|32000h[@XXi]]
@@ -86,8 +86,8 @@
        127 - BV32
 
   -->
-	<X-NO-PRE-PROCESS cmd="set" data="global_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8"/>
-	<X-NO-PRE-PROCESS cmd="set" data="outbound_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8"/>
-	<X-PRE-PROCESS cmd="set" data="global_codec_prefs=OPUS,PCMA,PCMU"/>
-	<X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=OPUS,PCMU,PCMA"/>
+    <X-NO-PRE-PROCESS cmd="set" data="global_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8"/>
+    <X-NO-PRE-PROCESS cmd="set" data="outbound_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8"/>
+    <X-PRE-PROCESS cmd="set" data="global_codec_prefs=OPUS,PCMA,PCMU"/>
+    <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=OPUS,PCMU,PCMA"/>
 </include>

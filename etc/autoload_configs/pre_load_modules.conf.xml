@@ -1,5 +1,5 @@
 <configuration name="pre_load_modules.conf" description="Modules">
-	<modules>
-		<load module="mod_mariadb"/>
-	</modules>
+    <modules>
+        <load module="mod_mariadb"/>
+    </modules>
 </configuration>

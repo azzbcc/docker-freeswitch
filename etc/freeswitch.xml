@@ -18,7 +18,7 @@
     NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
 -->
 <document type="freeswitch/xml">
-	<!--#comment
+    <!--#comment
       All comments starting with #command will be preprocessed and never sent to the xml parser
       Valid instructions:
       #include ==> Include another file to this exact point
@@ -33,18 +33,18 @@
       The same can be achieved with the <X-PRE-PROCESS> tag where the attrs 'cmd' and 'data' are
       parsed in the same way.
   -->
-	<!--#comment
+    <!--#comment
       vars.xml contains all the #set directives for the preprocessor.
   -->
-	<X-PRE-PROCESS cmd="include" data="vars.xml"/>
-	<X-PRE-PROCESS cmd="include" data="private/*.xml"/>
-	<section name="configuration" description="Various Configuration">
-		<X-PRE-PROCESS cmd="include" data="autoload_configs/*.xml"/>
-	</section>
-	<section name="dialplan" description="Regex/XML Dialplan">
-		<X-PRE-PROCESS cmd="include" data="dialplan/*.xml"/>
-	</section>
-	<section name="chatplan" description="Regex/XML Chatplan">
-		<X-PRE-PROCESS cmd="include" data="chatplan/*.xml"/>
-	</section>
+    <X-PRE-PROCESS cmd="include" data="vars.xml"/>
+    <X-PRE-PROCESS cmd="include" data="private/*.xml"/>
+    <section name="configuration" description="Various Configuration">
+        <X-PRE-PROCESS cmd="include" data="autoload_configs/*.xml"/>
+    </section>
+    <section name="dialplan" description="Regex/XML Dialplan">
+        <X-PRE-PROCESS cmd="include" data="dialplan/*.xml"/>
+    </section>
+    <section name="chatplan" description="Regex/XML Chatplan">
+        <X-PRE-PROCESS cmd="include" data="chatplan/*.xml"/>
+    </section>
 </document>
