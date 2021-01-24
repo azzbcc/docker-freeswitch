@@ -11,7 +11,7 @@
 -->
 <!-- http://wiki.freeswitch.org/wiki/Dialplan_XML -->
 <include>
-    <context name="default">
+    <context name="internal">
         <extension name="unloop">
             <condition field="${unroll_loops}" expression="^true$"/>
             <condition field="${sip_looped_call}" expression="^true$">
