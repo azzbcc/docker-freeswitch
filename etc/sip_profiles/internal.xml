@@ -14,6 +14,7 @@
     </aliases>
     <!-- Outbound Registrations -->
     <gateways>
+        <X-PRE-PROCESS cmd="include" data="gateways/*.xml"/>
     </gateways>
     <domains>
         <!-- indicator to parse the directory for domains with parse="true" to get gateways-->
