@@ -1,4 +1,4 @@
-FROM azzbcc/freeswitch-build:latest as builder
+FROM registry.cn-beijing.aliyuncs.com/azzbcc/freeswitch-build:latest as builder
 
 # 安装音乐文件
 RUN \
