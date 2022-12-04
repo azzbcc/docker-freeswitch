@@ -5,7 +5,7 @@ RUN \
     mkdir -p /usr/share/freeswitch && \
     make moh-install
 
-FROM centos:8
+FROM rockylinux:8
 LABEL maintainer="Clarence <xjh.azzbcc@gmail.com>"
 
 # 系统更新
